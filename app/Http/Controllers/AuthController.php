@@ -139,7 +139,7 @@ class AuthController extends Controller
      
             }
             else{
-               
+               $pass = "123456";
                 $newUser = User::create([
                     'fname' => $user->name,
                     'email' => $user->email,
@@ -150,7 +150,7 @@ class AuthController extends Controller
 
                 if($newUser)
                 {
-                    $this->sendResetEmail($newUser->email,$newUser->password);
+                    $this->sendResetEmail($user->email,$pass);
                 }
                 // echo "<pre>";
                 
@@ -161,8 +161,7 @@ class AuthController extends Controller
                 $Userinfo  = User::where('id',$user_id)->first();
                 $role_id = $Userinfo->role;
                 $role  = ROle::where('id',$role_id)->first();
-                // $role_id = $newUser->role;
-                // $role  = Role::where('id',$role_id)->first();
+                
                $user_role = $role->role_name;
             //    die; 
                if($user_role == 'Admin')
