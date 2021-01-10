@@ -41,11 +41,11 @@ class AuthController extends Controller
             $user_role = $role->role_name;
             if($user_role == 'Admin')
             {
-                return redirect('/abc');
+                return redirect('/admindashboard');
             }
             else
             {
-                return redirect('/pqr');
+                return redirect('/userdashboard');
             }
             
         }
@@ -128,11 +128,11 @@ class AuthController extends Controller
                 $user_role = $role->role_name;
                 if($user_role == 'Admin')
                 {
-                    return redirect('/abc');
+                    return redirect('/admindashboard');
                 }
                 else
                 {
-                    return redirect('/pqr');
+                    return redirect('/userdashboard');
                 }    
                 // return redirect($this->redirectPath());
                 // return view('dashboard');
@@ -148,6 +148,10 @@ class AuthController extends Controller
                     'password' => Hash::make("123456")
                 ]);
 
+                if($newUser)
+                {
+                    $this->sendResetEmail($newUser->email,$newUser->password);
+                }
                 // echo "<pre>";
                 
     
@@ -163,11 +167,11 @@ class AuthController extends Controller
             //    die; 
                if($user_role == 'Admin')
                 {
-                    return redirect('/abc');
+                    return redirect('/admindashboard');
                 }
                 else
                 {
-                    return redirect('/pqr');
+                    return redirect('/userdashboard');
                 }
                 }
     

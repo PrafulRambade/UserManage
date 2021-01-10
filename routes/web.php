@@ -41,8 +41,9 @@ Route::group( ['middleware' => 'auth' ], function()
     Route::get('logout', 'AuthController@logout');
     Route::get('/usermanage','UserController@userManage');
     Route::get('contact/deleteuser/{id}','UserController@deleteUser');  
-    Route::get('/abc','UserController@adminUser');
-    Route::get('/pqr','UserController@normalUser');
+    Route::get('/admindashboard','UserController@adminUser');
+    Route::get('/userdashboard','UserController@normalUser');
+    Route::get('/mydetails','UserController@normalUser');
     Route::post('/searchdetails','UserController@searchDetails');
 
 });

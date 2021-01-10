@@ -84,7 +84,9 @@ class UserController extends Controller
         $role_id = $Userinfo->role;
         $role  = ROle::where('id',$role_id)->first();
         $Userinfo['role_name'] = $role->role_name;
-
+        // echo "<pre>";
+        // print_r($Userinfo);
+        // die;
         return view('user.personalinfo',['userDetails'=>$Userinfo]);
     }
     public function adminUser(){
