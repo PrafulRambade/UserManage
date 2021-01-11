@@ -272,7 +272,14 @@ $(document).ready(function(){
                     
                     // $('#EditModalForm').modal('hide');
                     $.each(data, function(i, item) {
-                    
+                      if(item.role == 1)
+                      {
+                        item.role = "Admin";
+                      }
+                      else
+                      {
+                        item.role = "User";
+                      }
                       trHTML += '<tbody id="example222"><tr><td>' + item.fname +" "+ item.lname + '</td><td>' + item.email + '</td><td>' + item.username + '</td><td>' + item.role + '</td><td>' + item.created_at + '</td><td><a class="edit-user btn btn-primary btn-sm" id="' + item.id + '" data-toggle="modal" data-target="#EditModalForm">Edit</button></td><td><a href="javascript:void(0)" id="' + item.id + '" class="delete btn btn-danger btn-sm">Delete</a></td></tr></tbody>';
                     
                     });
