@@ -85,7 +85,15 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->fname}}</a>
+          @if (!empty(\Auth::user()->fname) && !empty(\Auth::user()->lname))
+              <a href="#" class="d-block">
+                {{Auth::user()->fname}} {{Auth::user()->lname}}
+              </a>
+          @elseif(!empty(\Auth::user()->fname))
+              <a href="#" class="d-block">
+                {{Auth::user()->fname}}
+              </a>
+          @endif 
         </div>
       </div>
 

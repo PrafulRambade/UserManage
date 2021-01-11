@@ -13,15 +13,15 @@
 <link rel="stylesheet" type="text/css" href="{{url('style.css')}}">
 </head>
 <body>
-<div class="container-fluid">
+<div class="container">
 <div class="row no-gutter">
-<div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-<div class="col-md-8 col-lg-6">
+<!-- <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div> -->
+<div class="col-md-12 col-lg-12">
 <div class="login d-flex align-items-center py-5">
 <div class="container">
 <div class="row">
-<div class="col-md-9 col-lg-8 mx-auto">
-<h3 class="login-heading mb-4">Welcome back!</h3>
+<div class="col-md-6 col-lg-5 mx-auto">
+<h3 class="login-heading mb-4" style="text-align:center"><strong>Login</strong></h3>
 @if(session()->has('message'))
     <div class="alert alert-success">
         {{ session()->get('message') }}

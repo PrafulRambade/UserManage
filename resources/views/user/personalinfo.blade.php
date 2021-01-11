@@ -141,9 +141,11 @@
 
                       <div class="form-label-group">
                       <label for="inputusername">User Role</label>
-                      <select class="form-control" name="role" id="role-dropdown">
+                      <select class="form-control" hidden name="role" id="role-dropdown">
                         <option value="">Select Role</option>
                       </select> 
+                      <!-- <input type="text" id="userrole" name="userrole"> -->
+                      <input type="text" name="userrole" readonly id="userrole" class="form-control"  placeholder="User ROle" >
                       @if ($errors->has('username'))
                       <span class="error">{{ $errors->first('username') }}</span>
                       @endif       
@@ -217,6 +219,13 @@ $(document).ready(function(){
                   $('#lname').val(data.lname);
                   $('#inputEmail').val(data.email);
                   $('#inputusername').val(data.username);
+                  if(data.role == 1)
+                  {
+                    $('#userrole').val("admin");
+                  }
+                  else{
+                    $('#userrole').val("user");
+                  }
                   
           });
     });
