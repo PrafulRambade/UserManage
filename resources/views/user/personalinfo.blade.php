@@ -25,24 +25,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <button class="btn btn-info btn-block text-left textv" data-toggle="collapse" data-target="#demo">Click To Search User Details</button><br>
-
-                <div id="demo" class="collapse">
-                    <form id="contactForm11" name="contactForm11" class="form-horizontal">
-                        @csrf
-                      <div class="row">
-                        <div class="col">
-                          <input type="text" class="form-control" id="firstsearchname" name="firstsearchname" placeholder="Enter First Name">
-                        </div>
-                        <div class="col">
-                          <input type="text" class="form-control" id="lastsearchname" name="lastsearchname" placeholder="Enter Last Name">
-                        </div>
-                        <div class="col">
-                          <button type="button" name="search_button1" id="search_button" class="btn btn-primary backlist">SEARCH</button>        
-                        </div>
-                      </div>
-                    </form>
-                </div>
+               
                 <h3 class="card-title">User Details</h3>
               </div>
               <!-- /.card-header -->
